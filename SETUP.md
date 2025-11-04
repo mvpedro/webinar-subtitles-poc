@@ -41,9 +41,19 @@ Required environment variables:
 
    - Go to [Google Cloud Console](https://console.cloud.google.com/)
    - Create a new project or select existing one
-   - Enable Google+ API
-   - Create OAuth 2.0 credentials
-   - Add authorized redirect URI: `http://localhost:3000/api/auth/callback/google`
+   - Configure OAuth consent screen:
+     - Go to "APIs & Services" → "OAuth consent screen"
+     - Choose "External" (unless you have Google Workspace)
+     - Fill in app name, user support email, developer email
+     - Add scopes: `email`, `profile`, `openid`
+     - Add test users if needed (for development)
+   - Create OAuth 2.0 credentials:
+     - Go to "APIs & Services" → "Credentials"
+     - Click "+ CREATE CREDENTIALS" → "OAuth client ID"
+     - Select "Web application"
+     - Add authorized redirect URI: `http://localhost:3000/api/auth/callback/google`
+     - Click "Create"
+   - Copy the Client ID and Client Secret
 
 4. **Set up YouTube API:**
 
